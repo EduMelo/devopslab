@@ -26,11 +26,6 @@ jobs:
       - name: Unit Test
         run: python -m unittest -v test
 
-      - name: Check sonar token
-        run: |
-          echo ${{ secrets.SONAR_TOKEN }} >> token
-          cat token
-
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
