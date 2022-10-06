@@ -26,8 +26,10 @@ jobs:
       - name: Unit Test
         run: python -m unittest -v test
 
-      - name: Check properties file
-        run: cat sonar-project.properties
+      - name: Check sonar token
+        run: |
+          cat ${{ secrets.SONAR_TOKEN }} >> token
+          cat token
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
