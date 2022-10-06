@@ -28,7 +28,7 @@ jobs:
 
       - name: Check sonar token
         run: |
-          cat ${{ secrets.SONAR_TOKEN }} >> token
+          echo ${{ secrets.SONAR_TOKEN }} >> token
           cat token
 
       - name: SonarCloud Scan
