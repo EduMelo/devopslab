@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Requirements
-        run:  pip install flask flask-wtf tox
+        run:  pip install flask flask-wtf pytest coverage
 
       - name: Unit Test
         run: python -m unittest -v test
